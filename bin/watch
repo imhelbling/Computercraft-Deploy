@@ -1,0 +1,3 @@
+#!/usr/bin
+
+moonc -w ./turtle_scripts -t ./deploy
