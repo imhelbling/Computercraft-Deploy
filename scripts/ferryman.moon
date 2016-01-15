@@ -1,7 +1,7 @@
 fill_inv = ->
   for i=1,16
     turtle.select i
-    turtle.suck
+    turtle.suck!
 
 dump_inv = ->
   for i=1,16
