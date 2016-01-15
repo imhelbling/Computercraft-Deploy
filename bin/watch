@@ -1,3 +1,3 @@
 #!/bin/sh
 
-moonc -w scripts/* -t deploy/*
+moonc -w scripts/*
