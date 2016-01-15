@@ -1,3 +1,3 @@
 #!/bin/sh
 
-moonc -w ./turtle_scripts -t ./deploy
+moonc -w scripts/* -t deploy/*
