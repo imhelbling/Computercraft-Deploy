@@ -42,3 +42,4 @@ luac.out
 scripts/*.lua
 .vimrc
 .gist
+scripts.yml
