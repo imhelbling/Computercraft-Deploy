@@ -3,8 +3,6 @@
 YAML = require "yaml"
 yaml_file = "scripts.yml"
 
-upload_file = "scripts/buildwall.lua"
-
 trim = (str) ->
   return str\gsub("^%s+", "")\gsub("%s+$", "")
 
@@ -40,6 +38,8 @@ publish_and_get_url = (file) ->
     result = handle\read("*a")
     handle\close!
     result
+
+upload_file = arg[1]
 
 upload_token = get_upload_token upload_file
 gist_map = get_gist_map!
