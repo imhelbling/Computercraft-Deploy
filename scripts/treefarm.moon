@@ -32,7 +32,7 @@ harvest = ->
     turtle.digDown!
     print "Planting sapling..."
     place_saplings!
-    success, data = turtle.inspectUp()
+    success, data = turtle.inspectUp!
     --unless data.name == "minecraft:leaves"
     --    turtle.digUp!
     --    turtle.up!
@@ -60,6 +60,9 @@ harvest = ->
 search = ->
     success, data = turtle.inspect()
 
+    while not turtle.detect!
+        turtle.forward!
+
     --Detect CHEST
     if data.name == "minecraft:chest"
         dump_wood!
@@ -67,9 +70,6 @@ search = ->
         get_saplings!
         turtle.turnLeft!
         turtle.turnLeft!
-
-    unless turtle.detect!
-        turtle.forward!
     
     --Detect DIORITE and turn RIGHT
     if (data.name == "minecraft:stone") and (data.metadata == 3)
