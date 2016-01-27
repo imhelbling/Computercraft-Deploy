@@ -1,10 +1,10 @@
 #!/usr/bin/env moon
 
 YAML = require "yaml"
-yaml_file = "scripts.yml"
+Str =  require "lib.strang"
+File = require "lib.file"
 
-trim = (str) ->
-  return str\gsub("^%s+", "")\gsub("%s+$", "")
+yaml_file = "scripts.yml"
 
 get_upload_token = (path) ->
     return path\gsub(".*/", "")\gsub(".lua$", "")
@@ -26,7 +26,6 @@ save_gist_map = (gist_map_table) ->
     fh\write gist_map_yaml
     fh\close!
 
-
 publish_and_get_url = (file) ->
     cached_url = get_gist_map![get_upload_token(file)]
     patch = ""
@@ -45,7 +44,7 @@ upload_token = get_upload_token upload_file
 gist_map = get_gist_map!
 
 url = publish_and_get_url upload_file
-gist_map[upload_token] = trim url
+gist_map[upload_token] = Str.trim url
 save_gist_map gist_map
 
 print "gist for #{upload_file} published.  You can view it here: #{url}"

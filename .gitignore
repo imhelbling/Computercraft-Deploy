@@ -43,3 +43,4 @@ scripts/*.lua
 .vimrc
 .gist
 scripts.yml
+tmp
