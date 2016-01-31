@@ -11,7 +11,8 @@ exists = (file_name) ->
 
 open = (file_name, mode, proc) ->
     fh = io.open file_name, mode
-    proc fh
+    result = proc fh
     io.close fh
+    result
 
 { :exists, :open }

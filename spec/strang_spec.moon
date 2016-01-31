@@ -1,12 +1,12 @@
 strang = require 'lib.strang'
 
 describe "strang", ->
-    describe "#trim", ->
 
+    describe "#trim", ->
         it "removes leading whitespace", ->
             subject = "  foo"
             result = strang.trim subject
-            assert.equal result, "foo"
+            assert.equal "foo", result
 
         it "removes trailing whitespace", ->
             subject = "foo  "

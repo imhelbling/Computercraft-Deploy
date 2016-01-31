@@ -13,9 +13,8 @@ get_gist_code = (gist_url) ->
     return gist_url\gsub(".*/", "")
 
 get_gist_map = ->
-    fh = io.open yaml_file, 'r'
-    gist_map = YAML.load(fh\read "*all")
-    fh\close!
+    gist_map = file.open(yaml_file, 'r', (fh) ->
+        YAML.load(fh\read "@all")
     if gist_map == ""
         gist_map = {}
     gist_map
